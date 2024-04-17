@@ -12,5 +12,16 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.100'
+    - name: docker setup QEMU
+      uses: docker/setup-qemu-action@v3
+    - name: docker setup BuildX
+      uses: docker/setup-buildx-action@v3
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
     - name: build
-      run: dotnet build WebApplication1
+      run: dotnet publish WebApplication1 --os linux --arch x64 --version-suffix new /t:PublishContainer -c Release
+    - name: startcd .
+      run: docker run -it webapplication1
+    
