@@ -24,6 +24,6 @@ jobs:
       uses: actions/checkout@v4
     - name: build
       run: dotnet publish WebApplication1 --os linux --arch x64 --version-suffix new /t:PublishContainer -c Release
-    - name: startcd .
-      run: docker run -i webapplication1
+    - name: start
+      run: docker run -id webapplication1
     
