@@ -25,5 +25,5 @@ jobs:
     - name: build
       run: dotnet publish WebApplication1 --os linux --arch x64 --version-suffix new /t:PublishContainer -c Release
     - name: startcd .
-      run: docker run -it webapplication1
+      run: docker run -i webapplication1
     
