@@ -1,0 +1,13 @@
+name: "test"
+on:
+  push:
+    branches: ["main"]
+jobs:
+  setup:
+    steps:
+    - name: Setup DotNet
+    - uses: action/checkout@v4
+    - uses: action/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.0'
+    - run: dotnet build github-actions-test
