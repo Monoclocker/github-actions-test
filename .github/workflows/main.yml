@@ -4,6 +4,18 @@ on:
     branches: ["main"]
 jobs:
   setup:
+<<<<<<< HEAD
+    runs-on: ubuntu-latest
+    steps:
+    - name: cd
+      uses: action/checkout@v4
+    - name: install .net
+      uses: action/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.0'
+    - name: build
+      run: dotnet build github-actions-test
+=======
     steps:
     - name: Setup DotNet
     - uses: action/checkout@v4
@@ -11,3 +23,4 @@ jobs:
       with:
         dotnet-version: '8.0.0'
     - run: dotnet build github-actions-test
+>>>>>>> 3ad1499 (initial)
