@@ -20,6 +20,8 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
+    - name: cd
+      uses: actions/checkout@v4
     - name: build
       run: dotnet publish WebApplication1 --os linux --arch x64 --version-suffix new /t:PublishContainer -c Release
     - name: startcd .
